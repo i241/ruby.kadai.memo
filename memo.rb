@@ -19,11 +19,10 @@ if memo_type == 1 then
     p "編集中のファイルは#{memo_edit}です。"
     p "編集したい内容を入力ください"
     p "Ctrl + D で保存されます。"
-    CSV.foreach("#{memo_edit}") do |csv|
-      p csv
-      CSV.open("#{memo_edit}",'a') do |csv|
+    CSV.open("#{memo_edit}",'a') do |csv|
       memo = readlines
       csv << memo
     end
-  end
+ else
+   puts "1か2をお選びください"
 end
